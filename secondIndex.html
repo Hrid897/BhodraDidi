@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            background-color: #e09f9f;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #birthday-card {
+            background-color: #6f6fe4;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: hsl(63, 98%, 51%);
+        }
+        p {
+            font-size:larger;
+            color: aliceblue;
+        }
+        #confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f7f2f2;
+            border-radius: 50%;
+            animation: confetti-fall 2s linear infinite;
+        }
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="birthday-card">
+        <h1>Happy Birthday!!!</h1>
+        <h1>Bhodra Didi</h1>
+        <p>Wishing you a day filled with joy...</p>
+        <p>May Lord Buddha's path help you to fulfill your Dream &#10084&#10084</p>
+    </div>
+    <div>
+        <p align="center"><img src="BhodraDi2.jpg" height="500"></p>
+    </div>
+    <div id="confetti">
+
+    </div>
+    <script>
+        function createConfetti() {
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                document.getElementById('confetti').appendChild(confetti);
+            }
+        }
+
+        createConfetti();
+    </script>
+</body>
+</html>
+
+
